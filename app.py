@@ -5,7 +5,7 @@ import numpy as np
 
 app = Flask(__name__)
 
-
+similarity_scores = load(open("model/similarity_scores.bin", "rb"))
 ## database/ dataframe loading...
 popular_df = load(open("model/popular_df.bin", "rb"))
 final_filtered = load(open("model/final_filtered.bin", "rb"))
@@ -52,7 +52,7 @@ def recommend():
 
     try:
         idx = np.where(train_pivot_table.index == book_name)[0][0]
-        most_similar_idx = np.argsort(cosine_similarity(train_pivot_table)[idx])[::-1][1:7]
+        most_similar_idx = np.argsort(similarity_scores[idx])[::-1][1:7]
             
         
         for book in np.array(train_pivot_table.index)[most_similar_idx]:
