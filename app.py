@@ -45,7 +45,7 @@ def recommend_load_ui():
 
 @app.route("/recommend_books", methods=["POST"])
 def recommend():
-    usr_input = str(request.form.get("usr_input")).strip().lower().split()
+    usr_input = str(request.form.get("usr_input")).lower().split()
     book_name = " ".join(usr_input)
     output = True
     datas = []
