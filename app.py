@@ -12,7 +12,7 @@ final_filtered = load(open("model/final_filtered.bin", "rb"))
 train_pivot_table = load(open("model/train_pivot_table.bin", "rb"))
 
 ## engines loading...
-cosine_similarity = load(open("model/cosine_similarity.bin", "rb"))
+# cosine_similarity = load(open("model/cosine_similarity.bin", "rb"))
 
 
 ## search suggestions...randomly choosen..
