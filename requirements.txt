@@ -2,5 +2,6 @@ flask
 numpy
 pandas
 scikit-learn
+secure-smtplib
 pickle5
 gunicorn
