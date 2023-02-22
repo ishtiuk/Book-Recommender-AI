@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 from pickle import load
 import numpy as np
 
@@ -98,7 +98,7 @@ def fetch_feedback():
         feedback_mail(f"[Book Recommender Feedback Bot]\nName- {name}\nMail- {email}\nFeedback- {message}")
 
         return render_template('contact.html', tnx_feedback="Thank you for feedback!")
-    return render_template('contact.html', tnx_feedback="")
+    return redirect(url_for('contact'))
 
 
 if __name__ == "__main__":
