@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Recommender</title>
+	<!-- Tailwind CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.7/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .output_notFound {
+            color: rgb(224, 224, 224);
+            font-size: 32px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            border-radius: 5px;
+            text-align: center;
+            height: 100px;
+            padding-top: 32px;
+            margin-top: 32%;
+            margin-bottom: 15%;
+            margin-left: 3%;
+            margin-right: 2%;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-white">
+	<!-- Navigation -->
+	<nav class="bg-gray-800 py-4">
+		<div class="container mx-auto px-4">
+			<ul class="flex">
+				<li class="mr-6">
+					<a href="/" class="text-white">Books</a>
+				</li>
+				<li class="mr-6">
+					<a href="/recommend" class="text-white font-bold">Recommender</a>
+				</li>
+                <li class="mr-6">
+                    <a href="/about" class="text-white">About</a>
+                </li>
+				<li class="mr-6">
+					<a href="/contact" class="text-white">Contact</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	
+	<!-- Hero Section -->
+	<section class="bg-gray-900 py-16">
+		<div class="container mx-auto px-4 flex flex-wrap">
+			<!-- Book Input -->
+			<div class="w-full md:w-1/2 mb-8 md:mb-0">
+				<h2 class="text-3xl font-bold text-white mb-6">Book Recommender AI</h2>
+				<p class="text-gray-400 mb-4">Enter the name of a Book to get recommendations:</p>
+
+				<form class="flex items-center" action="recommend_books" method="post">
+					<input name="usr_input" type="text" class="bg-gray-800 rounded-l-lg py-2 px-4 w-full outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Enter Book name..." list="search_suggest">
+                    <datalist id="search_suggest">
+                        <option value="{{search_suggestions[0]}}"></option>
+                        <option value="{{search_suggestions[1]}}"></option>
+                        <option value="{{search_suggestions[2]}}"></option>
+                        <option value="{{search_suggestions[3]}}"></option>
+                        <option value="{{search_suggestions[4]}}"></option>
+                        <option value="{{search_suggestions[5]}}"></option>
+                        <option value="{{search_suggestions[6]}}"></option>
+                        <option value="{{search_suggestions[7]}}"></option>
+                        <option value="{{search_suggestions[8]}}"></option>
+                        <option value="{{search_suggestions[9]}}"></option>
+                        <option value="{{search_suggestions[10]}}"></option>
+                        <option value="{{search_suggestions[11]}}"></option>
+                        <option value="{{search_suggestions[12]}}"></option>
+                        <option value="{{search_suggestions[13]}}"></option>
+                        <option value="{{search_suggestions[14]}}"></option>
+                    </datalist>
+					<button type="submit" class="bg-indigo-500 hover:bg-indigo-400 rounded-r-lg py-1 px-3 text-white font-bold">Get Recommendations</button>
+				</form>
+			</div>
+			
+			<!-- Book Recommendations -->
+            <div class="w-full md:w-1/2">
+                {%if output%}
+                <h2 class="text-2xl font-bold text-white mb-8">{{output}}</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    
+
+                    {%for data in datas%}
+                    <!-- Book Card -->
+                        <div class="w-full md:w-3/3 px-4 mb-8">
+                            <div class="bg-gray-800 rounded-lg overflow-hidden">
+                                <img src={{data[0]}} alt="Book Poster" class="w-full h-64 object-cover">
+                                <div class="p-4">
+                                    <h3 class="text-lg font-bold text-white mb-2">{{data[1]}}</h3>
+                                    <h5 class="text_white">Author - {{data[2]}}</h5>
+                                    <h5 class="text_white">Publisher - {{data[4]}}</h5>
+                                    <h5 class="text_white">Released - {{data[3]}}</h5>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    {%endfor%}
+
+                {%else%}
+                        
+                    <p class="output_notFound">{{datas}}</p>
+
+                {%endif%}
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+            

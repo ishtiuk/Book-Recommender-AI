@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact</title>
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.7/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-900 text-white">
+  <!-- Navigation -->
+  <nav class="bg-gray-800 py-4">
+    <div class="container mx-auto px-4">
+      <ul class="flex">
+        <li class="mr-6">
+          <a href="/" class="text-white">Books</a>
+        </li>
+        <li class="mr-6">
+          <a href="/recommend" class="text-white">Recommender</a>
+        </li>
+        <li class="mr-6">
+          <a href="/about" class="text-white">About</a>
+        </li>
+        <li class="mr-6">
+          <a href="/contact" class="text-white font-bold">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Contact Us Section -->
+  <section class="bg-gray-900 py-16">
+    <div class="container mx-auto px-4">
+      <h1 class="text-3xl font-bold text-white mb-10">Contact Us</h1>
+      <p class="text-lg leading-7 mb-8">
+        Have a question, comment, or feedback for us?
+      </p>
+      <form class="w-full max-w-lg" action="/6810c3c04069ca9707728937d8" method="post">
+        <div class="flex flex-wrap mb-6">
+          <div class="w-full">
+            <label class="block uppercase tracking-wide text-gray-500 text-xs font-bold mb-2" for="grid-first-name">
+              Name
+            </label>
+            <input name="name" class="appearance-none block w-full bg-gray-800 text-white border border-gray-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-700 focus:border-gray-500" id="grid-first-name" type="text" placeholder="Your Name">
+          </div>
+        </div>
+        <div class="flex flex-wrap mb-6">
+          <div class="w-full">
+            <label class="block uppercase tracking-wide text-gray-500 text-xs font-bold mb-2" for="grid-email">
+              Email
+            </label>
+            <input name="email" class="appearance-none block w-full bg-gray-800 text-white border border-gray-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-700 focus:border-gray-500" id="grid-email" type="email" placeholder="yourmail@example.com">
+          </div>
+        </div>
+        <div class="flex flex-wrap mb-6">
+        <div class="w-full">
+          <label class="block uppercase tracking-wide text-gray-500 text-xs font-bold mb-2" for="grid-email">
+            Message
+          </label>
+          <textarea name="message" rows="5" cols="50" class="appearance-none block w-full bg-gray-800 text-white border border-gray-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-700 focus:border-gray-500" id="grid-message" placeholder="Your message"></textarea>
+        </div>
+        <button class="rounded bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounfocus:outline-none focus:shadow-outline" type="submit">
+        Submit
+        </button>
+      </form>
+    </div>
+
+    <h3 class="text-2xl font-bold text-white mb-10">{{tnx_feedback}}</h3>
+  </section>
+
+  <footer class="bg-gray-800 py-4">
+		<div class="container mx-auto flex justify-between px-4">
+		  <p class="text-white">&copy; 2023 Book Recommender AI</p>
+		  <p class="text-white">Developed by <a href="https://www.linkedin.com/in/ishtiuk-ahammed/" class="text-blue-500" target="_blank">Md. Ishtiuk Ahammed</a></p>
+		</div>
+	</footer>
+
+</body>
