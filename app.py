@@ -79,12 +79,13 @@ def contact():
 ## Feedback transmission system via mail.. ;)
 def feedback_mail(message):
     import smtplib
+    from datetime import datetime
 
+    message = message + "\nUTC time: " + datetime.isoformat(datetime.utcnow())
     s = smtplib.SMTP('smtp.gmail.com', 587)
     s.starttls()
     s.login("feedbackmovierecommender@gmail.com", "frsrluyhmybhzbep")
     s.sendmail("feedbackmovierecommender@gmail.com", "deltagon@protonmail.com", message)
-    print(message)
     s.quit()
 
 
