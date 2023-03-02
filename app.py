@@ -83,8 +83,8 @@ def feedback_mail(message):
     message = message + "\nUTC time: " + datetime.isoformat(datetime.utcnow())
     s = smtplib.SMTP('smtp.gmail.com', 587)
     s.starttls()
-    s.login("feedbackmovierecommender@gmail.com", "suixoyqcouckzhvi")
-    s.sendmail("feedbackmovierecommender@gmail.com", "deltagon@protonmail.com", message)
+    s.login("feedbackbookrecommenderr@gmail.com", "kfetbwajqhdytdck")
+    s.sendmail("feedbackbookrecommenderr@gmail.com", "deltagon@protonmail.com", message)
     s.quit()
 
 
