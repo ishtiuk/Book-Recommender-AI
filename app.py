@@ -49,7 +49,6 @@ def recommend():
     book_name = " ".join(usr_input)
     output = "Recommended Books"
     datas = []
-    print(book_name)
 
     try:
         idx = np.where(train_pivot_table.index == book_name)[0][0]
